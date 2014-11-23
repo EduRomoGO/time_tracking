@@ -1,0 +1,17 @@
+<h1> <%= @minutes %> minutes </h1>
+
+
+<ul>
+
+	<% @month_entries.each do |entry| %>
+
+		<li>
+			<%= entry.date %> - <%= entry.hours %> hours - <%= entry.minutes %> minutes
+			<% if entry.comment.present? %>		
+				 - comment: "<%= entry.comment %>"
+			<% end %>
+		</li>
+	
+	<% end %>
+
+</ul>

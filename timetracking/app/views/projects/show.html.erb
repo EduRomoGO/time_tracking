@@ -1,0 +1,18 @@
+
+
+<ul>
+
+
+
+		<li>
+
+		<%= link_to(@project.name, project_entries_path(@project.id)) %>
+		<% if @project.description.present? %>		
+			 - <%= @project.description %>
+		<% end %>
+
+		</li>
+	
+
+
+</ul>

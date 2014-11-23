@@ -1,0 +1,22 @@
+	
+<%= flash_message %>
+
+<ul>
+
+	<% @project.entries.each do |entry| %>
+
+		<li>
+			<%= link_to("Edit entry", edit_project_entry_path(@project.id, entry.id)) %> - <%= entry.date %> - <%= entry.hours %> hours - <%= entry.minutes %> minutes
+			<% if entry.comment.present? %>		
+				 - comment: "<%= entry.comment %>"
+			<% end %>
+		</li>
+	
+	<%= link_to('Delete', project_entry_path(@project.id, entry.id), 
+	method: :delete, data: {confirm: 'Are you sure?'}) %>
+
+	<% end %>
+
+
+
+</ul>
